@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.cgnuo</groupId>
+    <artifactId>social-reminder</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>social-reminder-server</module>
+        <module>social-reminder-client</module>
+        <module>social-reminder-common</module>
+        <module>social-reminder-domain</module>
+        <module>social-reminder-config</module>
+    </modules>
+
+    <properties>
+        <commons-dbcp2.version>2.1</commons-dbcp2.version>
+        <spring.version>4.3.10.RELEASE</spring.version>
+        <spring-boot.version>1.5.6.RELEASE</spring-boot.version>
+        <spring-boot-maven-plugin>1.5.6.RELEASE</spring-boot-maven-plugin>
+        <mysql.version>6.0.6</mysql.version>
+        <junit.version>4.8</junit.version>
+        <slf4j.version>1.7.25</slf4j.version>
+        <log4j2.version>2.7</log4j2.version>
+        <log4j-web.version>2.7</log4j-web.version>
+        <log4j-slf4j-impl.version>2.7</log4j-slf4j-impl.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <fork>true</fork>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- Used by testing only -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+
+        <!-- logging -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${log4j-slf4j-impl.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-web</artifactId>
+            <version>${log4j-web.version}</version>
+        </dependency>
+    </dependencies>
+
+    <scm>
+        <url>https://github.com/liujun1105/SocialReminder</url>
+        <connection>scm:git:git@github.com:liujun1105/SocialReminder.git</connection>
+        <developerConnection>scm:git:git@github.com:liujun1105/SocialReminder.git</developerConnection>
+    </scm>
+
+    <repositories>
+        <repository>
+            <id>repository.spring.release</id>
+            <name>Spring GA Repository</name>
+            <url>http://repo.spring.io/release</url>
+        </repository>
+        <repository>
+            <id>repository.spring.milestone</id>
+            <name>Spring Milestone Repository</name>
+            <url>http://repo.spring.io/milestone</url>
+        </repository>
+    </repositories>
+
+</project>

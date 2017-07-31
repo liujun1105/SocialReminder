@@ -1,0 +1,11 @@
+#
+# Intellij Settings
+#
+**/*.iml
+.idea/
+**/target/
+
+#
+# Mac Specific
+#
+.DS_Store

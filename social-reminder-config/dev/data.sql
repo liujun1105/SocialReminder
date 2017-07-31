@@ -1,0 +1,1 @@
+INSERT INTO cgnuo.student (student_name) VALUES ('a');
